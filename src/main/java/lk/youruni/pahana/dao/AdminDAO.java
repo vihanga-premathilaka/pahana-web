@@ -6,7 +6,7 @@ import java.sql.*;
 public class AdminDAO {
     public Admin findByUsernameAndPassword(String username, String password) throws Exception {
         String sql = "SELECT * FROM admin WHERE username=? AND password=?";
-        try (Connection con = lk.youruni.pahana.dao.DBConnection.getConnection();
+        try (Connection con = lk.youruni.pahana.config.DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, username);
             ps.setString(2, password);

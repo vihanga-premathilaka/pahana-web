@@ -1,4 +1,5 @@
-package lk.youruni.pahana.dao;
+package lk.youruni.pahana.config;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
