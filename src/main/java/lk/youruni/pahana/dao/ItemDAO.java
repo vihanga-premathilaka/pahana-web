@@ -1,8 +1,12 @@
 package lk.youruni.pahana.dao;
 
 import lk.youruni.pahana.model.Item;
+
+
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ItemDAO {
     private final Connection conn;
@@ -11,8 +15,11 @@ public class ItemDAO {
         this.conn = conn;
     }
 
+
+    /* ========== CREATE ========== */
     public void addItem(Item item) throws SQLException {
-        String sql = "INSERT INTO items(item_name, price, stock) VALUES (?, ?, ?)";
+        final String sql = "INSERT INTO items (item_name, price, stock) VALUES (?, ?, ?)";
+
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, item.getItemName());
             ps.setDouble(2, item.getPrice());
@@ -21,8 +28,11 @@ public class ItemDAO {
         }
     }
 
+
+    /* ========== UPDATE ========== */
     public void updateItem(Item item) throws SQLException {
-        String sql = "UPDATE items SET item_name=?, price=?, stock=? WHERE item_id=?";
+        final String sql = "UPDATE items SET item_name = ?, price = ?, stock = ? WHERE item_id = ?";
+
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, item.getItemName());
             ps.setDouble(2, item.getPrice());
@@ -32,16 +42,22 @@ public class ItemDAO {
         }
     }
 
+
+    /* ========== DELETE ========== */
     public void deleteItem(int itemId) throws SQLException {
-        String sql = "DELETE FROM items WHERE item_id=?";
+        final String sql = "DELETE FROM items WHERE item_id = ?";
+
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, itemId);
             ps.executeUpdate();
         }
     }
 
+
+    /* ========== READ (single) ========== */
     public Item getItem(int itemId) throws SQLException {
-        String sql = "SELECT * FROM items WHERE item_id=?";
+        final String sql = "SELECT item_id, item_name, price, stock FROM items WHERE item_id = ?";
+
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, itemId);
             try (ResultSet rs = ps.executeQuery()) {
@@ -58,10 +74,14 @@ public class ItemDAO {
         return null;
     }
 
+
+    /* ========== READ (list) ========== */
     public List<Item> getAllItems() throws SQLException {
+        final String sql = "SELECT item_id, item_name, price, stock FROM items ORDER BY item_name";
         List<Item> list = new ArrayList<>();
-        String sql = "SELECT * FROM items";
-        try (Statement st = conn.createStatement(); ResultSet rs = st.executeQuery(sql)) {
+        try (PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
             while (rs.next()) {
                 list.add(new Item(
                         rs.getInt("item_id"),
@@ -73,4 +93,11 @@ public class ItemDAO {
         }
         return list;
     }
+
+
+    /* Convenience alias used by BillingServlet */
+    public List<Item> listAll() throws SQLException {
+        return getAllItems();
+    }
+
 }
