@@ -23,5 +23,6 @@
 <p><a href="<%=request.getContextPath()%>/billing.jsp">Create A Bill</a></p>
 <p><a href="<%=request.getContextPath()%>/customer_details.jsp">Customer Details</a></p>
 
+
 </body>
 </html>
