@@ -109,6 +109,5 @@
     </form>
     <a href="customers.jsp" class="back-link">← Back to Customers</a>
 </div>
-<p><a href="<%=request.getContextPath()%>/dashboard.jsp">Back to Main Menu</a></p>
 </body>
 </html>

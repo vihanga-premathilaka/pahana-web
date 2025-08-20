@@ -4,50 +4,5 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
-    <display-name>Pahana Edu</display-name>
-
-    <!-- Add Customer -->
-    <servlet>
-        <servlet-name>AddCustomerServlet</servlet-name>
-        <servlet-class>lk.youruni.pahana.web.AddCustomerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AddCustomerServlet</servlet-name>
-        <url-pattern>/addCustomer</url-pattern>
-    </servlet-mapping>
-
-    <!-- Edit Customer -->
-    <servlet>
-        <servlet-name>EditCustomerServlet</servlet-name>
-        <servlet-class>lk.youruni.pahana.web.EditCustomerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>EditCustomerServlet</servlet-name>
-        <url-pattern>/editCustomer</url-pattern>
-    </servlet-mapping>
-
-    <!-- Delete Customer -->
-    <servlet>
-        <servlet-name>DeleteCustomerServlet</servlet-name>
-        <servlet-class>lk.youruni.pahana.web.EditCustomerServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteCustomerServlet</servlet-name>
-        <url-pattern>/deleteCustomer</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>ItemServlet</servlet-name>
-        <servlet-class>lk.youruni.pahana.web.ItemServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ItemServlet</servlet-name>
-        <url-pattern>/items</url-pattern>
-    </servlet-mapping>
-
-    <!-- Optional: default welcome -->
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+    <!-- ... your servlet + mapping ... -->
 </web-app>

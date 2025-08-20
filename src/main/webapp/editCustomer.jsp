@@ -112,6 +112,5 @@
         </div>
     </div>
 </div>
-<p><a href="<%=request.getContextPath()%>/dashboard.jsp">Back to Main Menu</a></p>
 </body>
 </html>
