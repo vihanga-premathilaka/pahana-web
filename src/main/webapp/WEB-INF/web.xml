@@ -68,6 +68,18 @@
     </servlet-mapping>
 
 
+    <!-- Help Section -->
+    <servlet>
+        <servlet-name>HelpServlet</servlet-name>
+        <servlet-class>lk.youruni.pahana.web.HelpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelpServlet</servlet-name>
+        <url-pattern>/help</url-pattern>
+    </servlet-mapping>
+
+
+
     <!-- Optional: default welcome -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
