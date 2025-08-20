@@ -137,6 +137,11 @@
         </div>
     </div>
     <% } %>
+
+    <div class="links">
+        <a href="<%=ctx%>/dashboard.jsp">← Back to Dashboard</a>
+    </div>
+
 </div>
 </body>
 </html>
