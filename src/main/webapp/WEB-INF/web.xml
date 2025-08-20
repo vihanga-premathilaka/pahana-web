@@ -37,6 +37,15 @@
         <url-pattern>/deleteCustomer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>ItemServlet</servlet-name>
+        <servlet-class>lk.youruni.pahana.web.ItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ItemServlet</servlet-name>
+        <url-pattern>/items</url-pattern>
+    </servlet-mapping>
+
     <!-- Optional: default welcome -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>

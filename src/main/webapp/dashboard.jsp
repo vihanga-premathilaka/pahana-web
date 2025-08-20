@@ -19,5 +19,6 @@
 <p><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></p>
 <p><a href="<%=request.getContextPath()%>/addCustomer.jsp">Add Customer</a></p>
 <p><a href="<%=request.getContextPath()%>/editCustomer.jsp">Edit Customer</a></p>
+<p><a href="<%=request.getContextPath()%>/items.jsp">Manage Item</a></p>
 </body>
 </html>
