@@ -56,6 +56,18 @@
         <url-pattern>/billing</url-pattern>
     </servlet-mapping>
 
+
+    <!-- Customer Details -->
+    <servlet>
+        <servlet-name>CustomerDetailsServlet</servlet-name>
+        <servlet-class>lk.youruni.pahana.web.CustomerDetailsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerDetailsServlet</servlet-name>
+        <url-pattern>/customerDetails</url-pattern>
+    </servlet-mapping>
+
+
     <!-- Optional: default welcome -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
